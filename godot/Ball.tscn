@@ -1,7 +1,17 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+custom_solver_bias = 1.0
+extents = Vector2( 20, 20 )
 
 [node name="Ball" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="RigidBody2D"]
 margin_right = 40.0
 margin_bottom = 40.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2( 20, 20 )
+shape = SubResource( 1 )
