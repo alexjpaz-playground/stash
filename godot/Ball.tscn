@@ -10,7 +10,9 @@ extents = Vector2( 20, 20 )
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 gravity_scale = 0.0
+linear_damp = 0.0
 script = ExtResource( 1 )
+velocity = Vector2( 200, 200 )
 
 [node name="ColorRect" type="ColorRect" parent="RigidBody2D"]
 margin_right = 40.0
