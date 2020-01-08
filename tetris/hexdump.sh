@@ -1,8 +1,13 @@
 #!/bin/bash
+FILE='Tetris\ DX.srm'
 
-FILE='Tetris DX.src'
+i=0
 
-for commit in $(git log --format='%H %cI' ${FILE})
+rm -rf output/
+mkdir -p output
+
+for commit in $(git log --format='%H' "${FILE}")
 do
-    git show ${commit}:./${FILE} > output/${commit}
+    git show $commit:./Tetris\ DX.srm | xxd > output/${i}
+    ((i=i+1))
 done
