@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mocha Tests</title>
+    <link rel="stylesheet" href="https://unpkg.com/mocha@7.1.0/mocha.css">
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <script src="https://unpkg.com/mocha@7.1.0/mocha.js"></script>
+    <script src="https://unpkg.com/chai@4.2.0/chai.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="text/babel"></script>
+      let { expect } = chai;
+
+      mocha.setup('bdd');
+
+      it('should pass', () => {});
+      it('should fail', () => {
+        expect(2).to.eql(1);
+      });
+
+      const runner = mocha.run();
+
+      runner.on('end', () => {
+        console.log('end');
+      });
+    </script>
+  </body>
+</html>
