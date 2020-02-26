@@ -20,10 +20,12 @@
         expect(2).to.eql(1);
       });
 
-      const runner = mocha.run();
+      window.MOCHA_RUNNER = mocha.run();
 
-      runner.on('end', () => {
-        console.log('end');
+      window.MOCHA_RUNNER.on('end', () => {
+        var node = document.createElement('div');
+        node.id = "mocah--done";
+        document.body.append(node);
       });
     </script>
   </body>
